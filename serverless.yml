@@ -12,7 +12,6 @@ provider:
   stage: ${env:STAGE, 'production'}
 
   environment:
-    APP_VERSION: ${env:APP_VERSION}
     CARD_GENERATOR_URL: ${env:CARD_GENERATOR_URL}
     COR_SER_CLOCON_URL: ${env:COR_SER_CLOCON_URL}
     STORAGE_ACCESS_KEY_ID: ${env:STORAGE_ACCESS_KEY_ID}
