@@ -1,0 +1,60 @@
+service: comx-vocnarpc-sod-cardiadospai
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  deploymentBucket: grpcom-serverless-deploy
+  region: us-east-1
+  role: ${env:IAM_ROLE}
+  runtime: nodejs8.10
+  stage: ${env:STAGE, 'production'}
+
+  environment:
+    APP_VERSION: ${env:APP_VERSION}
+    CARD_GENERATOR_URL: ${env:CARD_GENERATOR_URL}
+    COR_SER_CLOCON_URL: ${env:COR_SER_CLOCON_URL}
+    STORAGE_ACCESS_KEY_ID: ${env:STORAGE_ACCESS_KEY_ID}
+    STORAGE_BUCKET: ${env:STORAGE_BUCKET}
+    STORAGE_REGION: ${env:STORAGE_REGION}
+    STORAGE_SECRET_ACCESS_KEY: ${env:STORAGE_SECRET_ACCESS_KEY}
+    STORAGE_URL: ${env:STORAGE_URL}
+
+custom:
+  package:
+    prefix: comx-vocnarpc-sod-cardiadospai
+
+package:
+  exclude:
+    - ./**
+  include:
+    - node_modules/**
+    - package.json
+    - config/**
+    - src/**
+
+functions:
+  root:
+    name: ${self:custom.package.prefix}-root
+    handler: src/handlers/root.handler
+    events:
+      - http:
+          path: /
+          method: get
+
+  healthCheck:
+    name: ${self:custom.package.prefix}-health-check
+    handler: src/handlers/healthCheck.handler
+    events:
+      - http:
+          path: /health_check
+          method: get
+
+  card:
+    name: ${self:custom.package.prefix}-card
+    handler: src/handlers/card.handler
+    events:
+      - http:
+          path: /card
+          method: get

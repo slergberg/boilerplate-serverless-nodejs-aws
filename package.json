@@ -1,0 +1,33 @@
+{
+  "name": "comx-vocnarpc-sod-cardiadospai",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "deploy": "node ./node_modules/serverless/bin/serverless deploy",
+    "invoke:function": "node ./node_modules/serverless/bin/serverless invoke local --function",
+    "start": "node ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
+    "start:debug": "node ./node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:9229 ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
+    "start:watch": "node ./node_modules/nodemon/bin/nodemon.js ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
+    "test": "cross-env NODE_ENV=test node ./node_modules/jest/bin/jest",
+    "test:watch": "cross-env NODE_ENV=test node ./node_modules/nodemon/bin/nodemon.js ./node_modules/jest/bin/jest"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.289.x",
+    "debug": "^3.1.x",
+    "qs": "^6.5.x"
+  },
+  "devDependencies": {
+    "aws-event-mocks": "^0.0.x",
+    "cross-env": "^5.2.x",
+    "eslint": "^5.3.x",
+    "eslint-config-airbnb-base": "^13.0.x",
+    "eslint-plugin-import": "^2.13.x",
+    "jest": "^23.4.x",
+    "nodemon": "^1.18.x",
+    "serverless": "^1.29.x",
+    "serverless-domain-manager": "^2.6.x",
+    "serverless-offline": "^3.25.x"
+  }
+}

@@ -1,0 +1,42 @@
+version: "2"
+
+networks:
+  default:
+    external:
+      name: main
+
+services:
+  api:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: cartaodiadospais.sodyo.vocenarpc.comitex
+    image: docker.grpcom.local/comite-x/voce-na-rpc/sodyo/cartao-dia-dos-pais:development
+    restart: on-failure:4
+    environment:
+      - APP_ENV=development
+      - CARD_GENERATOR_URL=http://cdn-static.rpc.com.br/interatividade/hotsites/dia-dos-pais/homenagem-2.html
+      - CHOKIDAR_USEPOLLING=true
+      - COR_SER_CLOCON_URL=http://api.cloud-convert.servicos.corporativo
+      - DEBUG=api,application
+      - NODE_ENV=development
+      - STORAGE_ACCESS_KEY_ID=123456789
+      - STORAGE_BUCKET=comitex-vocenarpc-sodyo-cartaodiadospais
+      - STORAGE_ENDPOINT=http://minio.web-base
+      - STORAGE_REGION=us-east-1
+      - STORAGE_SECRET_ACCESS_KEY=123456789
+      - VIRTUAL_HOST=cartaodiadospais.sodyo.vocenarpc.comitex
+      - VIRTUAL_PORT=3000
+    expose:
+      - "3000"
+    external_links:
+      - nginx-proxy.web-base
+    volumes:
+      - ../:/application
+      - ../:/mnt/base
+      - /application/node_modules
+    working_dir: /application
+    command:
+      - yarn
+      - run
+      - start:watch
