@@ -45,6 +45,7 @@ functions:
       - http:
           path: /
           method: get
+          cors: true
 
   healthCheck:
     name: ${self:custom.package.prefix}-health-check
@@ -53,6 +54,7 @@ functions:
       - http:
           path: /health_check
           method: get
+          cors: true
 
   card:
     name: ${self:custom.package.prefix}-card
@@ -61,3 +63,4 @@ functions:
       - http:
           path: /card
           method: get
+          cors: true
