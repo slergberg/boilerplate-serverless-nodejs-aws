@@ -16,6 +16,7 @@ services:
     environment:
       - APP_ENV=development
       - CARD_GENERATOR_URL=http://cdn-static.rpc.com.br/interatividade/hotsites/dia-dos-pais/homenagem-2.html
+      - CARD_STORAGE_PATH=interatividade/cartao-dia-dos-pais
       - CHOKIDAR_USEPOLLING=true
       - COR_SER_CLOCON_URL=http://api.cloud-convert.servicos.corporativo
       - DEBUG=api,application

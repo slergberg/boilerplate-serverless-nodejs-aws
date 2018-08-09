@@ -1,3 +1,5 @@
+require('isomorphic-fetch')
+
 const fs = require('fs')
 const path = require('path')
 const qs = require('qs')
@@ -5,7 +7,7 @@ const qs = require('qs')
 const { downloadFromUrl, uploadToS3 } = require('../services/storageService')
 const { formatResponse } = require('../../helpers/http')
 
-const { CARD_GENERATOR_URL, COR_SER_CLOCON_URL } = process.env
+const { CARD_GENERATOR_URL, CARD_STORAGE_PATH, COR_SER_CLOCON_URL } = process.env
 
 const generateCard = async (params) => {
   const cardQuery = qs.stringify(params)
@@ -53,10 +55,16 @@ const handler = async (event) => {
 
   const cardFilePath = await downloadCard(card)
 
-  const cardUrl = await uploadToS3(path.basename(cardFilePath), fs.readFileSync(cardFilePath))
+  const cardFileKey = await uploadToS3(
+    `${CARD_STORAGE_PATH}/${path.basename(cardFilePath)}`,
+    fs.readFileSync(cardFilePath),
+    {
+      ContentType: 'image/png',
+    },
+  )
 
   const response = {
-    url: cardUrl,
+    path: cardFileKey,
   }
 
   return formatResponse(response)

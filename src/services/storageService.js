@@ -92,8 +92,7 @@ const downloadFromS3 = async (key, options = {}) => (
       Key: key,
     }
 
-    const fileDirectory = fs.mkdtempSync('tmp/download-')
-    const filePath = path.join(fileDirectory, path.basename(key))
+    const filePath = path.join('/tmp', path.basename(key))
 
     const s3Stream = s3.getObject(params).createReadStream()
     s3Stream.on('error', reject)
@@ -113,21 +112,23 @@ const downloadFromS3 = async (key, options = {}) => (
 )
 
 const uploadToS3 = async (key, data, options = {}) => {
-  const { bucket = defaultBucket } = options
+  const { bucket = defaultBucket, ...extraOptions } = options
 
   const params = {
+    ...extraOptions,
     Body: data,
     Bucket: bucket,
     Key: key,
   }
 
-  return s3.putObject(params).promise()
+  await s3.putObject(params).promise()
+
+  return key
 }
 
 const downloadFromUrl = url => (
   new Promise(async (resolve, reject) => {
-    const fileDirectory = fs.mkdtempSync('tmp/download-')
-    const filePath = path.join(fileDirectory, path.basename(url))
+    const filePath = path.join('/tmp', path.basename(url))
 
     const writeStream = fs.createWriteStream(filePath)
     writeStream.on('finish', () => {

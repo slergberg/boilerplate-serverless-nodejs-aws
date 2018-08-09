@@ -16,6 +16,7 @@
   "dependencies": {
     "aws-sdk": "^2.289.x",
     "debug": "^3.1.x",
+    "isomorphic-fetch": "^2.2.x",
     "qs": "^6.5.x"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-service: comx-vocnarpc-sod-cardiadospai
+service: comx-vocrpc-int-cardiadospai
 
 plugins:
   - serverless-offline
@@ -17,21 +17,24 @@ provider:
     COR_SER_CLOCON_URL: ${env:COR_SER_CLOCON_URL}
     STORAGE_ACCESS_KEY_ID: ${env:STORAGE_ACCESS_KEY_ID}
     STORAGE_BUCKET: ${env:STORAGE_BUCKET}
+    STORAGE_PATH: ${env:STORAGE_PATH}
     STORAGE_REGION: ${env:STORAGE_REGION}
     STORAGE_SECRET_ACCESS_KEY: ${env:STORAGE_SECRET_ACCESS_KEY}
     STORAGE_URL: ${env:STORAGE_URL}
 
 custom:
   package:
-    prefix: comx-vocnarpc-sod-cardiadospai
+    prefix: comx-vocrpc-int-cardiadospai
 
 package:
+  individually: true
   exclude:
     - ./**
   include:
     - node_modules/**
     - package.json
     - config/**
+    - helpers/**
     - src/**
 
 functions:
