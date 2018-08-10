@@ -15,7 +15,7 @@
     "test:watch": "node ./node_modules/nodemon/bin/nodemon.js ./node_modules/jest/bin/jest --coverage"
   },
   "dependencies": {
-    "aws-sdk": "^2.289.x",
+    "aws-sdk": "^2.290.x",
     "debug": "^3.1.x",
     "isomorphic-fetch": "^2.2.x",
     "qs": "^6.5.x"
@@ -26,9 +26,9 @@
     "eslint": "^5.3.x",
     "eslint-config-airbnb-base": "^13.0.x",
     "eslint-plugin-import": "^2.13.x",
-    "jest": "^23.4.x",
+    "jest": "^23.5.x",
     "nodemon": "^1.18.x",
-    "serverless": "^1.29.x",
+    "serverless": "^1.30.x",
     "serverless-domain-manager": "^2.6.x",
     "serverless-offline": "^3.25.x",
     "serverless-webpack": "^5.2.x",
