@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "UNLICENSED",
   "scripts": {
-    "deploy": "node ./node_modules/serverless/bin/serverless deploy",
+    "build": "node ./node_modules/serverless/bin/serverless package",
+    "deploy": "node ./node_modules/serverless/bin/serverless deploy --package .serverless",
     "invoke:function": "node ./node_modules/serverless/bin/serverless invoke local --function",
     "start": "node ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
     "start:debug": "node ./node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:9229 ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",

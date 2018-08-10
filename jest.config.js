@@ -1,7 +1,7 @@
 module.exports = {
   testEnvironment: 'node',
   collectCoverageFrom: [
-    '{config,helper,src}/**/*.{js}',
+    '{config,helpers,src}/**/*.{js}',
     '*.{js}',
   ],
 }

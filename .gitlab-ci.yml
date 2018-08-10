@@ -1,15 +1,15 @@
 stages:
-  - build
   - test
+  - build
   - deploy
 
 .job_template: &base-image
   image: node:8.11
 
-.job_template: &build-image
+.job_template: &test-image
   <<: *base-image
 
-.job_template: &test-image
+.job_template: &build-image
   <<: *base-image
 
 .job_template: &deploy-image
@@ -31,23 +31,27 @@ stages:
   tags:
     - docker
 
+.job_template: &test
+  <<: *test-image
+  <<: *only-staging-production-tag
+  <<: *tags-docker
+  stage: test
+  script:
+    - yarn run test
+  when: on_success
+
 .job_template: &build
   <<: *build-image
   <<: *only-staging-production-tag
   <<: *tags-docker
   stage: build
-  script:
+  before_script:
     - yarn install
+  script:
+    - yarn run build
   artifacts:
     paths:
-      - config
-      - helpers
-      - node_modules
-      - package-lock.json
-      - package.json
-      - serverless.yml
-      - src
-      - yarn.lock
+      - .serverless
 
 .job_template: &deploy
   <<: *deploy-image
@@ -58,20 +62,26 @@ stages:
     - yarn run deploy
   when: on_success
 
-build-production:
-  <<: *build
-  <<: *only-production-tag
+test:
+  <<: *test
+  <<: *only-staging-production-tag
 
-deploy-production:
-  <<: *deploy
-  <<: *only-production-tag
+build:
+  <<: *build
+  <<: *only-staging-production-tag
   dependencies:
-    - build-production
-  environment:
-    name: production
+    - test
   variables:
     CARD_GENERATOR_URL: "http://cdn-static.rpc.com.br/interatividade/hotsites/dia-dos-pais/homenagem-3.html"
     CARD_STORAGE_PATH: "interatividade/cartao-dia-dos-pais"
     COR_SER_CLOCON_URL: "https://corporativo-cloudconvert.grpcom.com.br"
     IAM_ROLE: "arn:aws:iam::852929616770:role/lambda-comitex-vocenarpc-interactivity-cartaodiadospais"
     STORAGE_BUCKET: "app-rpc-static"
+
+deploy-production:
+  <<: *deploy
+  <<: *only-production-tag
+  dependencies:
+    - build
+  environment:
+    name: production
