@@ -36,6 +36,8 @@ stages:
   <<: *only-staging-production-tag
   <<: *tags-docker
   stage: test
+  before_script:
+    - yarn install
   script:
     - yarn run test
   when: on_success
