@@ -1,6 +1,6 @@
-# Comitê X - Você na RPC - Interactivity - Cartão Dia dos Pais
-[![pipeline status](https://gitlab.grpcom.local/comite-x/voce-na-rpc/interactivity/cartao-dia-dos-pais/badges/master/pipeline.svg)](https://gitlab.grpcom.local/comite-x/voce-na-rpc/interactivity/cartao-dia-dos-pais/commits/master)
-[![coverage report](https://gitlab.grpcom.local/comite-x/voce-na-rpc/interactivity/cartao-dia-dos-pais/badges/master/coverage.svg)](https://gitlab.grpcom.local/comite-x/voce-na-rpc/interactivity/cartao-dia-dos-pais/commits/master)
+# Tecnologia - Templates - Serverless
+[![pipeline status](https://gitlab.grpcom.local/tecnologia/templates/serverless/badges/master/pipeline.svg)](https://gitlab.grpcom.local/tecnologia/templates/serverless/commits/master)
+[![coverage report](https://gitlab.grpcom.local/tecnologia/templates/serverless/badges/master/coverage.svg)](https://gitlab.grpcom.local/tecnologia/templates/serverless/commits/master)
 
 # Serverless
 [Website](http://www.serverless.com) • [Docs](https://serverless.com/framework/docs/) • [Newsletter](http://eepurl.com/b8dv4P) • [Gitter](https://gitter.im/serverless/serverless) • [Forum](http://forum.serverless.com) • [Meetups](https://github.com/serverless/meetups) • [Twitter](https://twitter.com/goserverless) • [We're Hiring](https://serverless.com/company/jobs/)
