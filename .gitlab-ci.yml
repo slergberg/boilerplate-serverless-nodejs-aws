@@ -65,6 +65,8 @@ stages:
 test:
   <<: *test
   <<: *only-staging-production-tag
+  variables:
+    NODE_ENV: "test"
 
 build:
   <<: *build
