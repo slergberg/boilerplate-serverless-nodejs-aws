@@ -54,6 +54,11 @@ stages:
   artifacts:
     paths:
       - .serverless
+      - node_modules
+      - package-lock.json
+      - package.json
+      - serverless.yml
+      - yarn.lock
 
 .job_template: &deploy
   <<: *deploy-image
