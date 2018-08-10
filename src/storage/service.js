@@ -6,15 +6,19 @@ const path = require('path')
 
 const { decrypt } = require('../../helpers/encryption')
 
-const accessKeyId = process.env.STORAGE_ACCESS_KEY_ID
-const secretAccessKey = process.env.STORAGE_SECRET_ACCESS_KEY
-const endpoint = process.env.STORAGE_ENDPOINT
-const defaultBucket = process.env.STORAGE_BUCKET
-const defaultStorageUrl = process.env.STORAGE_URL
-const defaultCloudFrontPrivateKey = process.env.AWS_CF_ENCRYPTED_PRIVATE_KEY
+const {
+  STORAGE_ACCESS_KEY_ID: accessKeyId,
+  STORAGE_SECRET_ACCESS_KEY: secretAccessKey,
+  STORAGE_ENDPOINT: endpoint,
+  STORAGE_BUCKET: defaultBucket,
+  STORAGE_URL: defaultStorageUrl,
+  AWS_CF_ENCRYPTED_PRIVATE_KEY: defaultCloudFrontEncryptedPrivateKey,
+  AWS_CF_PRIVATE_KEY_ID: defaultCloudFrontPrivateKeyId,
+} = process.env
+
+const defaultCloudFrontPrivateKey = defaultCloudFrontEncryptedPrivateKey
   ? decrypt(process.env.AWS_CF_ENCRYPTED_PRIVATE_KEY)
   : undefined
-const defaultCloudFrontPrivateKeyId = process.env.AWS_CF_PRIVATE_KEY_ID
 
 let s3Config = {}
 if (accessKeyId) {

@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const qs = require('qs')
 
-const { downloadFromUrl, uploadToS3 } = require('../services/storageService')
+const { downloadFromUrl, uploadToS3 } = require('../storage/service')
 const { formatResponse } = require('../../helpers/http')
 
 const { CARD_GENERATOR_URL, CARD_STORAGE_PATH, COR_SER_CLOCON_URL } = process.env
@@ -70,4 +70,6 @@ const handler = async (event) => {
   return formatResponse(response)
 }
 
-module.exports = { handler }
+module.exports = {
+  handler,
+}

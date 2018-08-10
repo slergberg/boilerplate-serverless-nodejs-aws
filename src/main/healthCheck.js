@@ -8,4 +8,6 @@ const handler = (event, context, callback) => {
   callback(null, formatResponse(response))
 }
 
-module.exports = { handler }
+module.exports = {
+  handler,
+}
