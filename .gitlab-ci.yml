@@ -80,12 +80,6 @@ build:
   <<: *only-staging-production-tag
   dependencies:
     - test
-  variables:
-    CARD_GENERATOR_URL: "http://cdn-static.rpc.com.br/interatividade/hotsites/dia-dos-pais/homenagem-3.html"
-    CARD_STORAGE_PATH: "interatividade/cartao-dia-dos-pais"
-    COR_SER_CLOCON_URL: "https://corporativo-cloudconvert.grpcom.com.br"
-    IAM_ROLE: "arn:aws:iam::852929616770:role/lambda-comitex-vocenarpc-interactivity-cartaodiadospais"
-    STORAGE_BUCKET: "app-rpc-static"
 
 deploy-production:
   <<: *deploy
