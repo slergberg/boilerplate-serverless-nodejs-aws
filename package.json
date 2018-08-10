@@ -10,8 +10,8 @@
     "start": "node ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
     "start:debug": "node ./node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:9229 ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
     "start:watch": "node ./node_modules/nodemon/bin/nodemon.js ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
-    "test": "cross-env NODE_ENV=test node ./node_modules/jest/bin/jest",
-    "test:watch": "cross-env NODE_ENV=test node ./node_modules/nodemon/bin/nodemon.js ./node_modules/jest/bin/jest"
+    "test": "cross-env NODE_ENV=test node ./node_modules/jest/bin/jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test node ./node_modules/nodemon/bin/nodemon.js ./node_modules/jest/bin/jest --coverage"
   },
   "dependencies": {
     "aws-sdk": "^2.289.x",
@@ -29,6 +29,9 @@
     "nodemon": "^1.18.x",
     "serverless": "^1.29.x",
     "serverless-domain-manager": "^2.6.x",
-    "serverless-offline": "^3.25.x"
+    "serverless-offline": "^3.25.x",
+    "serverless-webpack": "^5.2.x",
+    "webpack": "^4.16.x",
+    "webpack-node-externals": "^1.7.x"
   }
 }

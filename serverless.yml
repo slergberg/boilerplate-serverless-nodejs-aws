@@ -1,6 +1,7 @@
 service: comx-vocrpc-int-cardiadospai
 
 plugins:
+  - serverless-webpack
   - serverless-offline
 
 provider:
@@ -24,6 +25,11 @@ provider:
 custom:
   package:
     prefix: comx-vocrpc-int-cardiadospai
+
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
 
 package:
   individually: true

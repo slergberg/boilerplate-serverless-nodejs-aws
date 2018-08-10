@@ -8,6 +8,9 @@
 ### Serverless ###
 .serverless
 
+### Webpack ###
+.webpack
+
 ### Node.js ###
 *.log
 *.pid
