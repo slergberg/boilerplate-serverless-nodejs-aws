@@ -3,5 +3,6 @@ module.exports = {
   collectCoverageFrom: [
     '{config,helpers,src}/**/*.{js}',
     '*.{js}',
+    '!*.config.{js}',
   ],
 }

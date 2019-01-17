@@ -1,4 +1,4 @@
-service: tecnologia-templates-serverless
+service: slergberg-boilerplate-serverless-nodejs-aws
 
 plugins:
   - serverless-webpack
@@ -6,7 +6,7 @@ plugins:
 
 provider:
   name: aws
-  deploymentBucket: grpcom-serverless-deploy
+  deploymentBucket: slergberg-deployment-bucket
   region: us-east-1
   role: ${env:IAM_ROLE}
   runtime: nodejs8.10
@@ -16,7 +16,7 @@ provider:
 
 custom:
   package:
-    prefix: tec-tem-ser
+    prefix: sle-boi-ser-nod-aws
 
   webpack:
     includeModules:

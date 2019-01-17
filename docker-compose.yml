@@ -1,4 +1,4 @@
-version: "2"
+version: '2'
 
 networks:
   default:
@@ -20,7 +20,9 @@ services:
       - VIRTUAL_HOST=serverless.templates.tecnologia
       - VIRTUAL_PORT=3000
     expose:
-      - "3000"
+      - '3000'
+    ports:
+      - '9229:9229'
     external_links:
       - nginx-proxy.web-base
     volumes:
@@ -31,4 +33,4 @@ services:
     command:
       - yarn
       - run
-      - start:watch
+      - start:debug

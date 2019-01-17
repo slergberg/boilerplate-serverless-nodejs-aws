@@ -33,7 +33,7 @@ const formatResponse = (data, code = 200) => ({
   body: JSON.stringify(data),
 })
 
-const parseRequest = event => ({
+const parseRequest = (event) => ({
   ...event,
   body: qs.parse(event.body),
 })

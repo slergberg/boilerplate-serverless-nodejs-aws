@@ -17,7 +17,6 @@
 *.pid.lock
 *.seed
 *.tgz
-/.env
 .eslintcache
 .grunt
 .lock-wscript
