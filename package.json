@@ -39,7 +39,7 @@
     "husky": "^1.3.x",
     "jest": "^23.6.x",
     "nodemon": "^1.18.x",
-    "prettier": "^1.15.x",
+    "prettier": "^1.16.x",
     "pretty-quick": "^1.10.x",
     "serverless": "^1.36.x",
     "serverless-domain-manager": "^2.6.x",
