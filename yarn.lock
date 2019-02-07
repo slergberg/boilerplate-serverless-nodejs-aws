@@ -5754,10 +5754,10 @@ serverless-webpack@^5.2.x:
     semver "^5.5.0"
     ts-node "^3.2.0"
 
-serverless@^1.36.x:
-  version "1.36.3"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.36.3.tgz#0645fcce7d83cee75b3969e9765ebf3fda2ca833"
-  integrity sha512-tFiePa29gHrbG3EbmegVeScUsJrDP+sB93nGPNW/R6DGccqxcI+84zZ2ICSoIF/DwH0YpmT4kffrqEzpadlKCw==
+serverless@^1.37.x:
+  version "1.37.0"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.37.0.tgz#9dcd9c43c3a9b7538955873bd71ef3a89f4f56c9"
+  integrity sha512-XSghn1Czi/REwfi0iz9GC0DdVwXQhcppFIGNm9fUBM+XQbCdB8Bjo8lewQJTqYiVzfzc7Of3QTTJ0kOZ+DLFlQ==
   dependencies:
     archiver "^1.1.0"
     async "^1.5.2"
@@ -6970,19 +6970,10 @@ wreck@12.x.x:
     boom "5.x.x"
     hoek "4.x.x"
 
-write-file-atomic@2.4.1:
+write-file-atomic@2.4.1, write-file-atomic@^2.0.0, write-file-atomic@^2.1.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.4.1.tgz#d0b05463c188ae804396fd5ab2a370062af87529"
   integrity sha512-TGHFeZEZMnv+gBFRfjAcxL5bPHrsGKtnb4qsFAws7/vlh+QfwAaySIw4AXP9ZskTTh5GWu3FLuJhsWVdiJPGvg==
-  dependencies:
-    graceful-fs "^4.1.11"
-    imurmurhash "^0.1.4"
-    signal-exit "^3.0.2"
-
-write-file-atomic@^2.0.0, write-file-atomic@^2.1.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.3.0.tgz#1ff61575c2e2a4e8e510d6fa4e243cce183999ab"
-  integrity sha512-xuPeK4OdjWqtfi59ylvVL0Yn35SF3zgcAcv7rBPFHVaEapaDr4GdGgm3j7ckTwH9wHL7fGmgfAnb0+THrHb8tA==
   dependencies:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
