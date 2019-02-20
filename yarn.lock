@@ -631,10 +631,10 @@ aws-event-mocks@^0.0.x:
   dependencies:
     lodash "^4.13.1"
 
-aws-sdk@^2.177.0, aws-sdk@^2.373.0, aws-sdk@^2.399.x:
-  version "2.399.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.399.0.tgz#43cb0aac79a1d534baf7e537b84f9a6beccb5f7b"
-  integrity sha512-Yb8CETbjUX9v7TqnT98Ou49G+6r28O0im0HifqZdGSqybJ1d6f52FVeDmpvFV7ayho+udoBV424ga/TcaceKcg==
+aws-sdk@^2.177.0, aws-sdk@^2.373.0, aws-sdk@^2.406.x:
+  version "2.406.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.406.0.tgz#ee45dd8fa383053eec2143c9f3ec24be4ffbce5c"
+  integrity sha512-/nLaTHZ7/XmLSBDmgLfJwmdO8aX5OkAN1FwCWsWcnlDac+KTe9On1ucrF6F3+35Zqv671R1kptT2gN3GaW9eKg==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
