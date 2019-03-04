@@ -5707,10 +5707,10 @@ serialize-javascript@^1.4.0:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.6.1.tgz#4d1f697ec49429a847ca6f442a2a755126c4d879"
   integrity sha512-A5MOagrPFga4YaKQSWHryl7AXvbQkEqpw4NNYMTNYUNV51bA8ABHgYFpqKx+YFFrw59xMV1qGH1R4AgoNIVgCw==
 
-serverless-domain-manager@^3.0.x:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.0.4.tgz#7efbebc6d59acf59aefa2e952b4f986eadd1c0cc"
-  integrity sha512-d2vyqqlqBZ37ntRuCEgQMbM3Vd49U4pYTZ4W7+GMlRlfKsZsbg1nNDuNuNpxo0LhSbmd/P0Z6d8AZRpF5mHL5Q==
+serverless-domain-manager@^3.1.x:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.1.0.tgz#878c07e838158486d7e597e8fc68846c4b87afaa"
+  integrity sha512-XIQK+HRGr3kvGY/8LUVWpV/WSYbXIKh0lo2tP0ml2E5PSfM9W6OGTmMdya5rmu7fjDUor8gT0+qoTkd0yWrTWw==
   dependencies:
     "@types/chai-spies" "^1.0.0"
     aws-sdk "^2.177.0"
