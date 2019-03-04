@@ -3915,6 +3915,11 @@ jsonpath-plus@^0.16.0:
   resolved "https://registry.yarnpkg.com/jsonpath-plus/-/jsonpath-plus-0.16.0.tgz#fe441b23f03ec6979a5603513988cd3edb7db5dc"
   integrity sha1-/kQbI/A+xpeaVgNROYjNPtt9tdw=
 
+jsonschema@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.2.4.tgz#a46bac5d3506a254465bc548876e267c6d0d6464"
+  integrity sha512-lz1nOH69GbsVHeVgEdvyavc/33oymY1AZwtePMiMj4HZPMbP5OIKK3zT9INMWjwua/V4Z4yq7wSlBbSG+g4AEw==
+
 jsonwebtoken@^8.3.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.4.0.tgz#8757f7b4cb7440d86d5e2f3becefa70536c8e46a"
@@ -5716,10 +5721,10 @@ serverless-domain-manager@^3.1.x:
     aws-sdk "^2.177.0"
     chalk "^2.4.1"
 
-serverless-offline@^4.2.x:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-4.2.2.tgz#2951fa17900cf63547b4cd3b4ad0b39dea95658a"
-  integrity sha512-EVbQ46tP84WU7ao8rupDnpFwleiTAsjXIsrV4WEhEHPJgsSTsH4ZGWfyot8MXTAP3udBTYteAaalx2ckPtsHzw==
+serverless-offline@^4.7.x:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-4.7.1.tgz#572a2ac15bd7327cc9050652758983fae7af2057"
+  integrity sha512-gGe5dqWivghl1PxLkE0CbCmYHKtLDE4INkEIh1lGKc/l4qcaTkdRiBmegvJ0JKTxE+HI7vNNnv0DwY5egC4ObA==
   dependencies:
     boom "^7.3.0"
     cryptiles "^4.1.2"
@@ -5728,6 +5733,7 @@ serverless-offline@^4.2.x:
     hapi-cors-headers "^1.0.3"
     js-string-escape "^1.0.1"
     jsonpath-plus "^0.16.0"
+    jsonschema "^1.2.4"
     jsonwebtoken "^8.3.0"
     trim-newlines "^2.0.0"
     velocityjs "^1.1.2"
