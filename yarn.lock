@@ -331,10 +331,10 @@
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz#2cc2ca41051498382b43157c8227fea60363f94a"
   integrity sha512-ohkhb9LehJy+PA40rDtGAji61NCgdtKLAlFoYp4cnuuQEswwdK3vz9SOIkkyc3wrk8dzjphQApNs56yyXLStaQ==
 
-"@types/node@*":
-  version "11.10.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.5.tgz#fbaca34086bdc118011e1f05c47688d432f2d571"
-  integrity sha512-DuIRlQbX4K+d5I+GMnv+UfnGh+ist0RdlvOp+JZ7ePJ6KQONCFQv/gKYSU1ZzbVdFSUCKZOltjmpFAGGv5MdYA==
+"@types/node@*", "@types/node@^11.11.3":
+  version "11.11.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.6.tgz#df929d1bb2eee5afdda598a41930fe50b43eaa6a"
+  integrity sha512-Exw4yUWMBXM3X+8oqzJNRqZSwUAaS4+7NdvHqQuFi/d+synz++xmX3QIf+BFqneW8N31R8Ky+sikfZUXq07ggQ==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -5993,12 +5993,13 @@ serialize-javascript@^1.4.0:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.6.1.tgz#4d1f697ec49429a847ca6f442a2a755126c4d879"
   integrity sha512-A5MOagrPFga4YaKQSWHryl7AXvbQkEqpw4NNYMTNYUNV51bA8ABHgYFpqKx+YFFrw59xMV1qGH1R4AgoNIVgCw==
 
-serverless-domain-manager@^3.1.x:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.1.0.tgz#878c07e838158486d7e597e8fc68846c4b87afaa"
-  integrity sha512-XIQK+HRGr3kvGY/8LUVWpV/WSYbXIKh0lo2tP0ml2E5PSfM9W6OGTmMdya5rmu7fjDUor8gT0+qoTkd0yWrTWw==
+serverless-domain-manager@^3.2.x:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.2.1.tgz#bc847d3f0f25f2957f457873bf5ddc6c56494c9d"
+  integrity sha512-vn/MLRoUDjAlqxDBCgtzqYBfE8ykxyLj3Mjpy18sfkprgfE8TXIwpzz6Pnxl6IEqjyewnhCC/IA2Z8IVLypYZQ==
   dependencies:
     "@types/chai-spies" "^1.0.0"
+    "@types/node" "^11.11.3"
     aws-sdk "^2.177.0"
     chalk "^2.4.1"
 

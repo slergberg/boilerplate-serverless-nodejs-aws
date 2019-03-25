@@ -42,7 +42,7 @@
     "prettier": "^1.16.x",
     "pretty-quick": "^1.10.x",
     "serverless": "^1.39.x",
-    "serverless-domain-manager": "^3.1.x",
+    "serverless-domain-manager": "^3.2.x",
     "serverless-offline": "^4.9.x",
     "serverless-webpack": "^5.2.x",
     "webpack": "^4.29.x",
