@@ -41,7 +41,7 @@
     "nodemon": "^1.18.x",
     "prettier": "^1.17.x",
     "pretty-quick": "^1.10.x",
-    "serverless": "^1.40.x",
+    "serverless": "^1.41.x",
     "serverless-domain-manager": "^3.2.x",
     "serverless-offline": "^4.9.x",
     "serverless-webpack": "^5.2.x",
