@@ -1,6 +1,6 @@
 # Contributing to a boilerplate
 
-[![Build Status](https://travis-ci.org/slergberg/boilerplate-serverless-nodejs-aws.svg?branch=master)](https://travis-ci.org/slergberg/boilerplate-serverless-nodejs-aws)
+[![Build Status](https://travis-ci.com/slergberg/boilerplate-serverless-nodejs-aws.svg?branch=master)](https://travis-ci.com/slergberg/boilerplate-serverless-nodejs-aws)
 [![License](https://img.shields.io/github/license/slergberg/boilerplate-serverless-nodejs-aws.svg)](https://packagist.org/packages/slergberg/boilerplate-serverless-nodejs-aws)
 
 This template is under active development right now. You're encouraged to submit
