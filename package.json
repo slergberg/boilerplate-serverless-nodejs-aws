@@ -44,7 +44,7 @@
     "serverless": "^1.41.x",
     "serverless-domain-manager": "^3.2.x",
     "serverless-offline": "^4.9.x",
-    "serverless-webpack": "^5.2.x",
+    "serverless-webpack": "^5.3.x",
     "webpack": "^4.30.x",
     "webpack-node-externals": "^1.7.x"
   },
