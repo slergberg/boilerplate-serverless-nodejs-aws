@@ -6426,9 +6426,9 @@ serverless-domain-manager@^3.2.x:
     chalk "^2.4.1"
 
 serverless-offline@^5.4.x:
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-5.4.2.tgz#62be9b7141b42760f80fb4c4aa88c410795163c9"
-  integrity sha512-vC8b55mNgR5HV+VsX3jSc1SF4xI36QMJMEvbQ2gUsbBDF4EqWUDEjoZnGCjmoCsPqTNuwHNLrRIzBQU/cNbVig==
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-5.4.4.tgz#c1830e7b841758c5383c8dd20b579db4905cebfb"
+  integrity sha512-2i98Ro5xuucwwYWh27SF1WmBcanUSydC0hLQ/fbkqn3zcud/rFdjNhwynE3NHvfa4bmlqzpXQgPRQswUEG3kwA==
   dependencies:
     "@hapi/boom" "^7.4.2"
     "@hapi/cryptiles" "^4.2.0"
