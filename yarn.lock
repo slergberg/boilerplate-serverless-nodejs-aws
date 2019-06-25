@@ -6425,10 +6425,10 @@ serverless-domain-manager@^3.2.x:
     aws-sdk "^2.177.0"
     chalk "^2.4.1"
 
-serverless-offline@^5.4.x:
-  version "5.4.4"
-  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-5.4.4.tgz#c1830e7b841758c5383c8dd20b579db4905cebfb"
-  integrity sha512-2i98Ro5xuucwwYWh27SF1WmBcanUSydC0hLQ/fbkqn3zcud/rFdjNhwynE3NHvfa4bmlqzpXQgPRQswUEG3kwA==
+serverless-offline@^5.5.x:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-5.5.0.tgz#9eaea44af49313405fffa8702ddf80d8b92a2427"
+  integrity sha512-94lJmkW7AA5rcPCQtgNUISESzyoPwZZI3kmKZj2/WuFmMRyWvaklgqjDtiqr8M4SNAce4DusB6wombKuE/mBhw==
   dependencies:
     "@hapi/boom" "^7.4.2"
     "@hapi/cryptiles" "^4.2.0"
