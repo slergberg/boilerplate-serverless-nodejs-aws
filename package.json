@@ -33,7 +33,7 @@
   "devDependencies": {
     "aws-event-mocks": "^0.0.x",
     "cross-env": "^5.2.x",
-    "eslint": "^5.16.x",
+    "eslint": "^6.1.x",
     "eslint-config-airbnb-base": "^14.0.x",
     "eslint-plugin-import": "^2.18.x",
     "husky": "^3.0.x",
