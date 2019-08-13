@@ -1241,7 +1241,7 @@ aws-event-mocks@^0.0.x:
   dependencies:
     lodash "^4.13.1"
 
-aws-sdk@^2.177.0, aws-sdk@^2.496.0, aws-sdk@^2.508.x:
+aws-sdk@^2.490.0, aws-sdk@^2.496.0, aws-sdk@^2.508.x:
   version "2.508.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.508.0.tgz#19eeb9da0df41382d45568367837eeb6e7eab3b5"
   integrity sha512-VXMxsuwK31U+N259562VPiwQblwRQFQoVnv0d4Gp4Ji+JimCvV6qF73zobZy7cQK5ZPAB25BK4JVMdTYkpi+vA==
@@ -7026,12 +7026,12 @@ serve-static@1.14.1:
     parseurl "~1.3.3"
     send "0.17.1"
 
-serverless-domain-manager@^3.2.x:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.2.7.tgz#16f92e08b7d82c8217d39a507d5a52da3b724da2"
-  integrity sha512-3AcMJgTVaDz8XY4rLdqOl54z3ZgOeY0st0g1BPH1ne5ama5FZhnT0RCRXIesY5SUxcycus9yNRxBCdSaLnyPSQ==
+serverless-domain-manager@^3.3.x:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.3.0.tgz#758b928f5a146b3e925e5cd9d6e0043879805eee"
+  integrity sha512-oGZDNzI/Y15QusC/E+Zm6VaXoAwnbQnm6e6wyXPFDi1Sqoeo8xarKNj0fZODhEf4DKggAqxVfkiXjhuC8yZu0Q==
   dependencies:
-    aws-sdk "^2.177.0"
+    aws-sdk "^2.490.0"
     chalk "^2.4.1"
 
 serverless-offline@^5.10.x:
