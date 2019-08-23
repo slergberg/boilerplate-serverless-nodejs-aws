@@ -26,7 +26,7 @@
     "url": "https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues"
   },
   "dependencies": {
-    "aws-sdk": "^2.515.x",
+    "aws-sdk": "^2.516.x",
     "debug": "^4.1.x",
     "qs": "^6.8.x"
   },
