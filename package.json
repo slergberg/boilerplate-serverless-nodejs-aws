@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "aws-event-mocks": "^0.0.x",
-    "cross-env": "^5.2.x",
+    "cross-env": "^6.0.x",
     "eslint": "^6.4.x",
     "eslint-config-airbnb-base": "^14.0.x",
     "eslint-plugin-import": "^2.18.x",
