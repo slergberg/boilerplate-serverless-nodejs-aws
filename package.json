@@ -40,7 +40,7 @@
     "jest": "^24.9.x",
     "nodemon": "^1.19.x",
     "prettier": "^1.18.x",
-    "pretty-quick": "^1.11.x",
+    "pretty-quick": "^2.0.x",
     "serverless": "^1.54.x",
     "serverless-domain-manager": "^3.3.x",
     "serverless-offline": "^5.12.x",
