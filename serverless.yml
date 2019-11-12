@@ -8,7 +8,7 @@ provider:
   name: aws
   deploymentBucket: slergberg-deployment-bucket
   region: us-east-1
-  role: ${env:IAM_ROLE}
+  role: ${env:IAM_ROLE, ''}
   runtime: nodejs8.10
   stage: ${env:STAGE, 'production'}
 
@@ -28,10 +28,10 @@ package:
   exclude:
     - ./**
   include:
-    - node_modules/**
-    - package.json
     - config/**
     - helpers/**
+    - node_modules/**
+    - package.json
     - src/**
 
 functions:

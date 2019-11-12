@@ -1,18 +1,18 @@
-# Slergberg/Boilerplate/Serverless/Node.js/AWS
+# Boilerplate for Serverless Node.js on AWS
 
-[![Build Status](https://travis-ci.com/slergberg/boilerplate-serverless-nodejs-aws.svg?branch=master)](https://travis-ci.com/slergberg/boilerplate-serverless-nodejs-aws)
-[![Coverage Status](https://coveralls.io/repos/github/slergberg/boilerplate-serverless-nodejs-aws/badge.svg)](https://coveralls.io/github/slergberg/boilerplate-serverless-nodejs-aws)
+A very simple Node.js Serverless project boilerplate for AWS.
+
+[![build](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/workflows/build/badge.svg)](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/)
+[![coverage](https://coveralls.io/repos/github/slergberg/boilerplate-serverless-nodejs-aws/badge.svg?branch=master)](https://coveralls.io/github/slergberg/boilerplate-serverless-nodejs-aws?branch=master)
+[![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-This boilerplate is under active development.
+## Contributing
 
-## Contributing to this boilerplate
-
-This boilerplate is under active development right now. You're encouraged to
-submit pull requests, propose features and discuss issues.
-
-See [CONTRIBUTING](CONTRIBUTING.md).
+Feel free to contribute with this small library. For more information, take a
+look at our
+[contributing guide](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/blob/master/CONTRIBUTING.md).
 
 ## License
 
-This template is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+[MIT](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/blob/master/LICENSE.md)

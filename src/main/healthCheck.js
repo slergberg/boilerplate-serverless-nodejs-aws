@@ -1,11 +1,7 @@
-const { formatResponse } = require('../../helpers/http')
+const { jsonResponse } = require('../../helpers/http')
 
-const handler = (event, context, callback) => {
-  const response = {
-    status: 200,
-  }
-
-  callback(null, formatResponse(response))
+async function handler() {
+  return jsonResponse(null, 200)
 }
 
 module.exports = {

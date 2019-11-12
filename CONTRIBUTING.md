@@ -1,113 +1,86 @@
-# Contributing to a boilerplate
+# Contributing
 
-[![Build Status](https://travis-ci.com/slergberg/boilerplate-serverless-nodejs-aws.svg?branch=master)](https://travis-ci.com/slergberg/boilerplate-serverless-nodejs-aws)
-[![License](https://img.shields.io/github/license/slergberg/boilerplate-serverless-nodejs-aws.svg)](https://packagist.org/packages/slergberg/boilerplate-serverless-nodejs-aws)
+We are open to, and grateful for, any contributions made by the community. By
+contributing to this library, you agree to abide by the
+[code of conduct](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/blob/master/CODE_OF_CONDUCT.md).
 
-This template is under active development right now. You're encouraged to submit
-[pull requests](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/pulls),
-[propose features and discuss issues](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues).
+## Reporting Issues and Asking Questions
 
-### Fork the Project
+Before opening an issue, please search the
+[issue tracker](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues)
+to make sure your issue hasn't already been reported.
 
-Fork the [project on Github](https://github.com/slergberg/boilerplate-serverless-nodejs-aws)
-and check out your copy.
+## Development
 
-```
-git clone https://github.com/contributor/boilerplate-serverless-nodejs-aws.git
-cd boilerplate-serverless-nodejs-aws
-git remote add upstream https://github.com/slergberg/boilerplate-serverless-nodejs-aws.git
-```
+Visit the
+[issue tracker](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues)
+to find a list of open issues that need attention.
 
-### Create a Topic Branch
-
-Make sure your fork is up-to-date and create a topic branch for your feature or
-bug fix.
+Fork, then clone the repo:
 
 ```
-git checkout master
-git pull upstream master
-git checkout -b my-feature-branch
+git clone https://github.com/your-username/boilerplate-serverless-nodejs-aws.git
 ```
 
-### Yarn Install and Test
+### Building
 
-Ensure that you can build the project and run tests.
-
-```
-yarn install
-yarn run test
-```
-
-### Write Tests
-
-Try to write a test that reproduces the problem you're trying to fix or
-describes a feature that you want to build. Add to [tests](tests).
-
-We definitely appreciate pull requests that highlight or reproduce a problem,
-even without a fix.
-
-### Write Code
-
-Implement your feature or bug fix.
-
-Make sure that `yarn run test` completes without errors.
-
-### Write Documentation
-
-Document any external behavior in the [README](README.md).
-
-### Commit Changes
-
-Make sure git knows your name and email address:
+Running the build task will create both a CommonJS module-per-module build and a
+UMD build.
 
 ```
-git config --global user.name "Your Name"
-git config --global user.email "contributor@example.com"
+npm run build
 ```
 
-Writing good commit logs is important. A commit log should describe what changed
-and why.
+### Testing and Linting
+
+To run the tests:
 
 ```
-git add ...
-git commit
+npm run test
 ```
 
-### Push
+To check the tests coverage, run the following:
 
 ```
-git push origin my-feature-branch
+npm test -- --coverage
 ```
 
-### Make a Pull Request
-
-Go to https://github.com/contributor/boilerplate-serverless-nodejs-aws and
-select your feature branch.
-Click the 'Pull Request' button and fill out the form. Pull requests are usually
-reviewed within a few days.
-
-### Rebase
-
-If you've been working on a change for a while, rebase with upstream/master.
+To continuously watch and run tests, run the following:
 
 ```
-git fetch upstream
-git rebase upstream/master
-git push origin my-feature-branch -f
+npm test -- --coverage --watch
 ```
 
-### Check on Your Pull Request
+To perform linting with `eslint`, run the following:
 
-Go back to your pull request after a few minutes and see whether it passed
-muster with Travis-CI. Everything should look green, otherwise fix issues and
-amend your commit as described above.
+```
+npm run lint
+```
 
-### Be Patient
+### New Features
 
-It's likely that your change will not be merged and that the nitpicky
-maintainers will ask you to do more, or fix seemingly benign problems. Hang on
-there!
+Please open an issue with a proposal for a new feature or refactoring before
+starting on the work. We don't want you to waste your efforts on a pull request
+that we won't want to accept.
 
-### Thank You
+## Submitting Changes
 
-Please do know that we really appreciate and value your time and work.
+- Open a new issue in the
+  [Issue tracker](https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues).
+- Fork the repo.
+- Create a new feature branch based off the `master` branch.
+- Make sure all tests pass and there are no linting errors.
+- Submit a pull request, referencing any issues it addresses.
+
+Please try to keep your pull request focused in scope and avoid including
+unrelated commits.
+
+After you have submitted your pull request, we'll try to get back to you as soon
+as possible. We may suggest some changes or improvements.
+
+Thank you for contributing!
+
+## Attribution
+
+This Contributing Guide is adapted from the React Redux Contributing Guide
+available at https://github.com/reduxjs/react-redux/blob/master/CONTRIBUTING.md.

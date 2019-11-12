@@ -1,14 +1,12 @@
-const { formatResponse } = require('../../helpers/http')
 const { handler: healthCheckHandler } = require('../../src/main/healthCheck')
+const { jsonResponse } = require('../../helpers/http')
 
-test('Version from package.json', () => {
-  const expectedResponse = {
-    status: 200,
-  }
+describe('health check handler', () => {
+  test('basic request', async () => {
+    const expectedResponse = null
 
-  const callback = jest.fn().mockImplementation((err, data) => data)
+    const response = await healthCheckHandler(null, null)
 
-  healthCheckHandler(null, null, callback)
-
-  expect(callback).toBeCalledWith(null, formatResponse(expectedResponse))
+    expect(response).toMatchObject(jsonResponse(expectedResponse))
+  })
 })

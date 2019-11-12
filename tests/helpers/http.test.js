@@ -1,96 +1,121 @@
 const qs = require('qs')
 
-const { ApiError } = require('../../helpers/errors')
-const {
-  formatErrorResponse,
-  formatResponse,
-  parseRequest,
-} = require('../../helpers/http')
+const { jsonRequest, jsonResponse } = require('../../helpers/http')
 
-test('Format basic error response', () => {
-  const errorResponse = formatErrorResponse({ message: 'basic-error-message' })
+describe('http helpers', () => {
+  it('format empty cors response', () => {
+    const response = jsonResponse(null)
 
-  expect(errorResponse).toEqual({
-    statusCode: 400,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: 'basic-error-message',
+    expect(response).toMatchObject({
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+    })
   })
-})
 
-test('Format basic error response with custom code', () => {
-  const errorResponse = formatErrorResponse(
-    { message: 'basic-error-message-with-custom-code' },
-    500,
-  )
+  it('format empty non-cors response', () => {
+    const response = jsonResponse(null, 200, { cors: false })
 
-  expect(errorResponse).toEqual({
-    statusCode: 500,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: 'basic-error-message-with-custom-code',
+    expect(response).not.toMatchObject({
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+    })
   })
-})
 
-test('Format custom error response', () => {
-  const errorMessage = 'custom-error-message'
+  it('format empty response with custom headers', () => {
+    const authorizationHeader = 'Bearer AbCdEf123456'
 
-  const errorResponse = formatErrorResponse(
-    new ApiError(errorMessage, { statusCode: 500 }),
-  )
+    const response = jsonResponse(null, 200, {
+      cors: false,
+      headers: { Authorization: authorizationHeader },
+    })
 
-  expect(errorResponse).toEqual({
-    statusCode: 500,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: JSON.stringify({ code: errorMessage }),
+    expect(response).not.toMatchObject({
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+    })
+
+    expect(response).toMatchObject({
+      headers: {
+        Authorization: authorizationHeader,
+      },
+    })
   })
-})
 
-test('Format basic response', () => {
-  const responseData = { testContent: 'basic-response-message' }
+  it('format basic error response', () => {
+    const responseData = 'basic-error-message'
 
-  const errorResponse = formatResponse(responseData)
+    const response = jsonResponse(responseData, 500)
 
-  expect(errorResponse).toEqual({
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: JSON.stringify(responseData),
+    expect(response).toMatchObject({
+      statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+      body: JSON.stringify(responseData),
+    })
   })
-})
 
-test('Format basic response with custom code', () => {
-  const responseData = {
-    testContent: 'basic-response-message-with-custom-code',
-  }
+  it('format basic response', () => {
+    const responseData = 'basic-response-message'
 
-  const errorResponse = formatResponse(responseData, 201)
+    const response = jsonResponse(responseData)
 
-  expect(errorResponse).toEqual({
-    statusCode: 201,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: JSON.stringify(responseData),
+    expect(response).toMatchObject({
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+      body: JSON.stringify(responseData),
+    })
   })
-})
 
-test('Parse basic request', () => {
-  const basicRequest = {
-    body: qs.stringify({ testContent: 'basic-request-test' }),
-  }
+  it('format basic response with custom code', () => {
+    const responseData = 'basic-response-message-with-custom-code'
 
-  const parsedRequest = parseRequest(basicRequest)
+    const response = jsonResponse(responseData, 201)
 
-  expect(parsedRequest.body.testContent).toBe('basic-request-test')
+    expect(response).toMatchObject({
+      statusCode: 201,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+      body: JSON.stringify(responseData),
+    })
+  })
+
+  it('format JSON response', () => {
+    const responseData = { testContent: 'basic-response-message' }
+
+    const response = jsonResponse(responseData)
+
+    expect(response).toMatchObject({
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+      body: JSON.stringify(responseData),
+    })
+  })
+
+  it('parse basic request', () => {
+    const requestData = { testContent: 'basic-request-test' }
+
+    const basicRequest = {
+      body: qs.stringify(requestData),
+    }
+
+    const parsedRequest = jsonRequest(basicRequest)
+
+    expect(parsedRequest.body).toMatchObject(requestData)
+  })
 })

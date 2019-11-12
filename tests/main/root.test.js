@@ -1,16 +1,17 @@
-const packageDefinition = require('../../package.json')
-const { formatResponse } = require('../../helpers/http')
 const { handler: rootHandler } = require('../../src/main/root')
+const { jsonResponse } = require('../../helpers/http')
 
-test('Version from package.json', () => {
-  const expectedResponse = {
-    name: packageDefinition.name,
-    version: packageDefinition.version,
-  }
+const packageDefinition = require('../../package.json')
 
-  const callback = jest.fn().mockImplementation((err, data) => data)
+describe('root handler', () => {
+  test('basic request', async () => {
+    const expectedResponse = {
+      name: packageDefinition.name,
+      version: packageDefinition.version,
+    }
 
-  rootHandler(null, null, callback)
+    const response = await rootHandler(null, null)
 
-  expect(callback).toBeCalledWith(null, formatResponse(expectedResponse))
+    expect(response).toMatchObject(jsonResponse(expectedResponse))
+  })
 })

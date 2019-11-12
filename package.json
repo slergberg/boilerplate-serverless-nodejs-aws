@@ -1,8 +1,7 @@
 {
-  "name": "slergberg-boilerplate-serverless-nodejs-aws",
-  "description": "Slergberg boilerplate for serverless Node.js application on AWS",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@slergberg/boilerplate-serverless-nodejs-aws",
+  "version": "0.1.0",
+  "description": "A very simple Node.js Serverless project boilerplate for AWS.",
   "keywords": [
     "slergberg",
     "boilerplate",
@@ -11,52 +10,82 @@
     "aws",
     "js"
   ],
-  "author": {
-    "name": "Rodrigo Scomação do Nascimento",
-    "email": "me@rodrigosn.com",
-    "url": "https://rodrigosn.com/"
-  },
   "license": "MIT",
-  "homepage": "https://github.com/slergberg/boilerplate-serverless-nodejs-aws#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slergberg/boilerplate-serverless-nodejs-aws.git"
-  },
-  "bugs": {
-    "url": "https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues"
-  },
+  "author": "Rodrigo Scomação do Nascimento <rodrigo.sc.na@gmail.com> (https://github.com/rodrigoscna)",
+  "homepage": "https://github.com/slergberg/boilerplate-serverless-nodejs-aws",
+  "repository": "github:slergberg/boilerplate-serverless-nodejs-aws",
+  "bugs": "https://github.com/slergberg/boilerplate-serverless-nodejs-aws/issues",
   "dependencies": {
-    "aws-sdk": "^2.567.x",
-    "debug": "^4.1.x",
-    "qs": "^6.9.x"
+    "aws-sdk": "^2.569.0",
+    "debug": "^4.1.1",
+    "qs": "^6.9.1"
   },
   "devDependencies": {
-    "aws-event-mocks": "^0.0.x",
-    "cross-env": "^6.0.x",
-    "eslint": "^6.6.x",
-    "eslint-config-airbnb-base": "^14.0.x",
-    "eslint-plugin-import": "^2.18.x",
-    "husky": "^3.0.x",
-    "jest": "^24.9.x",
-    "nodemon": "^1.19.x",
-    "prettier": "^1.18.x",
-    "pretty-quick": "^2.0.x",
-    "serverless": "^1.57.x",
-    "serverless-domain-manager": "^3.3.x",
-    "serverless-offline": "^5.12.x",
-    "serverless-webpack": "^5.3.x",
-    "webpack": "^4.41.x",
-    "webpack-node-externals": "^1.7.x"
+    "aws-event-mocks": "^0.0.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "npm-check-updates": "^3.2.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.0",
+    "serverless": "^1.57.0",
+    "serverless-domain-manager": "^3.3.0",
+    "serverless-offline": "^5.12.0",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.41.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "build": "node ./node_modules/serverless/bin/serverless package",
-    "deploy": "node ./node_modules/serverless/bin/serverless deploy --package .serverless",
-    "invoke:function": "node ./node_modules/serverless/bin/serverless invoke local --function",
-    "start": "node ./node_modules/serverless/bin/serverless offline --host 0.0.0.0 start",
-    "start:debug": "node ./node_modules/nodemon/bin/nodemon --inspect=0.0.0.0:9229 --exec yarn run start",
-    "start:watch": "node ./node_modules/nodemon/bin/nodemon --exec yarn run start",
-    "test": "node ./node_modules/jest/bin/jest",
-    "test:coverage": "node ./node_modules/jest/bin/jest --coverage",
-    "test:watch": "node ./node_modules/nodemon/bin/nodemon --exec yarn run test:coverage"
+    "build": "serverless package",
+    "clean": "rimraf .serverless .webpack",
+    "deploy": "serverless deploy --package .serverless",
+    "invoke:function": "serverless invoke local --function",
+    "lint": "eslint src tests",
+    "prepare": "npm run clean",
+    "pretest": "npm run lint",
+    "start": "serverless offline --host 0.0.0.0 start",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "env": {
+      "jest": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "import/prefer-default-export": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "{config,helpers,src}/**/*.js",
+      "*.js",
+      "!*.config.js"
+    ],
+    "testEnvironment": "node"
+  },
+  "nodemonConfig": {
+    "ext": "js,mjs,coffee,litcoffee,json,yml"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "proseWrap": "always",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

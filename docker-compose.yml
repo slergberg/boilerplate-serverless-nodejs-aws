@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 networks:
   default:
@@ -10,27 +10,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: serverless.templates.tecnologia
-    image: docker.grpcom.local/tecnologia/templates/serverless:development
+    container_name: aws.nodejs.serverless.boilerplate.slergberg.localhost
+    image: slergberg/boilerplate-serverless-nodejs-aws
     restart: on-failure:4
     environment:
       - CHOKIDAR_USEPOLLING=true
       - DEBUG=api,application
       - NODE_ENV=development
-      - VIRTUAL_HOST=serverless.templates.tecnologia
+      - VIRTUAL_HOST=aws.nodejs.serverless.boilerplate.slergberg.localhost
       - VIRTUAL_PORT=3000
     expose:
       - '3000'
-    ports:
-      - '9229:9229'
     external_links:
-      - nginx-proxy.web-base
+      - nginx-proxy.web-dev-svc.localhost
     volumes:
       - .:/application
-      - .:/mnt/base
       - /application/node_modules
     working_dir: /application
     command:
-      - yarn
+      - npm
       - run
-      - start:debug
+      - start

@@ -1,45 +1,43 @@
 const qs = require('qs')
 
-const { ApiError } = require('./errors')
-
-const formatErrorResponse = (error, code = 400) => {
-  if (error instanceof ApiError) {
-    return {
-      statusCode: error.statusCode,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
-      },
-      body: JSON.stringify(error.details),
-    }
-  }
+function corsJsonResponse(response) {
+  const { headers: responseHeaders = {} } = response
 
   return {
-    statusCode: code,
+    ...response,
     headers: {
+      ...responseHeaders,
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': true,
     },
-    body: error.message,
+    body: response.body,
   }
 }
 
-const formatResponse = (data, code = 200) => ({
-  statusCode: code,
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': true,
-  },
-  body: JSON.stringify(data),
-})
+function jsonRequest(requestEvent) {
+  return {
+    body: qs.parse(requestEvent.body),
+    event: requestEvent,
+  }
+}
 
-const parseRequest = (event) => ({
-  ...event,
-  body: qs.parse(event.body),
-})
+function jsonResponse(responseBody, statusCode = 200, options = {}) {
+  const { cors = true, headers } = options
+
+  const response = {
+    body: responseBody ? JSON.stringify(responseBody) : responseBody,
+    headers,
+    statusCode,
+  }
+
+  if (cors) {
+    return corsJsonResponse(response)
+  }
+
+  return response
+}
 
 module.exports = {
-  formatErrorResponse,
-  formatResponse,
-  parseRequest,
+  jsonRequest,
+  jsonResponse,
 }

@@ -1,15 +1,18 @@
 # Base image
-FROM node:11.6-alpine
+FROM node:12.13-alpine
 
 # Base system dependencies
 RUN apk add --no-cache \
     curl \
     git
 
-# Application files
-ADD . /application
+# Workdir
+RUN mkdir -p /application
 WORKDIR /application
-RUN yarn install
 
-# Exposing ports
-EXPOSE 3000
+# NPM dependencies
+ADD package.json package-lock.json ./
+RUN npm install
+
+# Application files
+ADD . ./
