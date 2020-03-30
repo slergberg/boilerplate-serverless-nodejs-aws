@@ -18,7 +18,7 @@
   "dependencies": {
     "aws-sdk": "^2.648.0",
     "debug": "^4.1.1",
-    "qs": "^6.9.2"
+    "qs": "^6.9.3"
   },
   "devDependencies": {
     "aws-event-mocks": "^0.0.0",
